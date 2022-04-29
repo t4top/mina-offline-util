@@ -16,10 +16,21 @@
     "transaction",
     "delegation"
   ],
+  "scripts": {
+    "main": "node .",
+    "format": "prettier --write --ignore-path .gitignore ."
+  },
   "author": "t4top",
   "license": "GPL-3.0-or-later",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/t4top/mina-offline-util/issues"
   },
-  "homepage": "https://github.com/t4top/mina-offline-util#readme"
+  "homepage": "https://github.com/t4top/mina-offline-util#readme",
+  "dependencies": {
+    "@o1labs/client-sdk": "^1.0.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
 }
