@@ -19,43 +19,43 @@ npm install
 ## Usage
 
 ```bash
-node index.js [COMMAND] [PARAMETER]...
+node index.js COMMAND [PARAMETER]...
 ```
 
-COMMANDs are case insensitive. Below are available COMMANDs and their PARAMETERs. This help is displayed if no COMMAND is specified.
+Below are available COMMANDs and their PARAMETERs. This help is displayed if no COMMAND is specified.
 
-**NewWallet**
+**newwallet**
 
 Create a new wallet. It does not take any PARAMETER.
 
 ```bash
-node index.js NewWallet
+node index.js newwallet
 ```
 
-**PublicKey**
+**publickey**
 
 Derive a public key from a private key.
 
 ```bash
-node index.js PublicKey [PRIVATE_KEY]
+node index.js publickey <PRIVATE_KEY>
 ```
 
-**Payment**
+**payment**
 
 Sign a payment transaction.
 Broadcast the signed transaction using https://minaexplorer.com/broadcast-tx.
 
 ```bash
-node index.js Payment [PRIVATE_KEY] [RECEIVER] [AMOUNT] [FEE] [NONCE] <MEMO>
+node index.js payment <PRIVATE_KEY> <RECEIVER> <AMOUNT> <FEE> <NONCE> [MEMO]
 ```
 
-**Delegation**
+**delegation**
 
 Sign a stake delegation transaction.
 Broadcast the signed transaction using https://minaexplorer.com/broadcast-delegation.
 
 ```bash
-node index.js Delegation [PRIVATE_KEY] [RECEIVER] [FEE] [NONCE] <MEMO>
+node index.js delegation <PRIVATE_KEY> <RECEIVER> <FEE> <NONCE> [MEMO]
 ```
 
 **_Note:_**
@@ -71,7 +71,7 @@ node index.js Delegation [PRIVATE_KEY] [RECEIVER] [FEE] [NONCE] <MEMO>
 
 - The output should look like below.
 
-  For signed payment transaction:
+For signed payment transaction:
 
 ```json
 {
@@ -92,7 +92,7 @@ node index.js Delegation [PRIVATE_KEY] [RECEIVER] [FEE] [NONCE] <MEMO>
 }
 ```
 
-    For signed stake delegation transaction:
+For signed stake delegation transaction:
 
 ```json
 {

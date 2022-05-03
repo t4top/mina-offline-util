@@ -47,29 +47,28 @@ const printHelp = () => {
   const prefix = "node index.js";
   return `Simple commands for signing Mina transactions offline. Useful for managing air-gapped cold wallets.
   
-  Usage: ${prefix} [COMMAND] [PARAMETER]...
+  Usage: ${prefix} COMMAND [PARAMETER]...
   
   Below are available COMMANDs and their PARAMETERs.
-  COMMANDs are case insensitive.
   This help is displayed if no COMMAND is specified.
   
-    NewWallet
+    newwallet
       Create a new wallet. It does not take any PARAMETER.
-      Usage: ${prefix} NewWallet
+      Usage: ${prefix} newwallet
   
-    PublicKey
+    publickey
       Derive a public key from a private key.
-      Usage: ${prefix} PublicKey [PRIVATE_KEY]
+      Usage: ${prefix} publickey <PRIVATE_KEY>
   
-    Payment
+    payment
       Sign a payment transaction.
       Broadcast the signed transaction using https://minaexplorer.com/broadcast-tx.
-      Usage: ${prefix} Payment [PRIVATE_KEY] [RECEIVER] [AMOUNT] [FEE] [NONCE] <MEMO>
+      Usage: ${prefix} payment <PRIVATE_KEY> <RECEIVER> <AMOUNT> <FEE> <NONCE> [MEMO]
   
-    Delegation
+    delegation
       Sign a stake delegation transaction.
       Broadcast the signed transaction using https://minaexplorer.com/broadcast-delegation.
-      Usage: ${prefix} Delegation [PRIVATE_KEY] [RECEIVER] [FEE] [NONCE] <MEMO>
+      Usage: ${prefix} delegation <PRIVATE_KEY> <RECEIVER> <FEE> <NONCE> [MEMO]
   
   Note:
   - AMOUNT and FEE are in Mina.
