@@ -17,7 +17,7 @@
     "delegation"
   ],
   "scripts": {
-    "main": "node .",
+    "dev": "node .",
     "format": "prettier --write --ignore-path .gitignore ."
   },
   "author": "t4top",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/t4top/mina-offline-util#readme",
   "dependencies": {
-    "@o1labs/client-sdk": "^1.0.1"
+    "mina-signer": "^1.1.0"
   },
   "devDependencies": {
     "prettier": "^2.6.2"

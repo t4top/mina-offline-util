@@ -1,4 +1,8 @@
-import { genKeys, derivePublicKey, signPayment, signStakeDelegation } from "@o1labs/client-sdk";
+import Client from "mina-signer";
+
+const MINA_NETWORK = "mainnet";
+
+const mina = new Client({ network: MINA_NETWORK });
 
 const log = data => console.log(data);
 
@@ -6,18 +10,18 @@ const log = data => console.log(data);
 const convertToGiga = minaValue => minaValue * 10 ** 9;
 
 // Create a new Mina wallet account. Return wallet { publicKey, privateKey }
-const generateNewWallet = () => genKeys();
+const generateNewWallet = () => mina.genKeys();
 
 // Generate Wallet from a private key
 const getWalletFromPrivateKey = privateKey => ({
   privateKey,
-  publicKey: derivePublicKey(privateKey)
+  publicKey: mina.derivePublicKey(privateKey)
 });
 
 // Sign a payment transaction
 // Return a signed transaction that can be broadcasted using https://minaexplorer.com/broadcast-tx
 const signPaymentTransaction = (wallet, receiverPublicAddress, amount, fee, nonce, memo = "") =>
-  signPayment(
+  mina.signPayment(
     {
       to: receiverPublicAddress,
       from: wallet.publicKey,
@@ -26,13 +30,13 @@ const signPaymentTransaction = (wallet, receiverPublicAddress, amount, fee, nonc
       nonce,
       memo
     },
-    wallet
+    wallet.privateKey
   );
 
 // Sign a stake delegation transaction
 // Return a signed transaction that can be broadcasted using https://minaexplorer.com/broadcast-delegation
 const signDelegationTransaction = (wallet, stakePublicAddress, fee, nonce, memo = "") =>
-  signStakeDelegation(
+  mina.signStakeDelegation(
     {
       to: stakePublicAddress,
       from: wallet.publicKey,
@@ -40,7 +44,7 @@ const signDelegationTransaction = (wallet, stakePublicAddress, fee, nonce, memo 
       nonce,
       memo
     },
-    wallet
+    wallet.privateKey
   );
 
 const printHelp = () => {

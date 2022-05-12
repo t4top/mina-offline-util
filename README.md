@@ -75,12 +75,11 @@ For signed payment transaction:
 
 ```json
 {
-  "publicKey": "B62qmd....",
   "signature": {
     "field": "14753603935....",
     "scalar": "20270149766...."
   },
-  "payload": {
+  "data": {
     "to": "B62qmd....",
     "from": "B62qmd....",
     "fee": "10000000",
@@ -96,12 +95,11 @@ For signed stake delegation transaction:
 
 ```json
 {
-  "publicKey": "B62qmd....",
   "signature": {
     "field": "20501294904....",
     "scalar": "17717981555...."
   },
-  "payload": {
+  "data": {
     "to": "B62qmd....",
     "from": "B62qmd....",
     "fee": "10000000",
