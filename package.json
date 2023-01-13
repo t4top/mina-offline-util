@@ -1,6 +1,6 @@
 {
   "name": "@t4top/mina-offline-util",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple set of commands for handlng Mina transactions offline in an air-gapped cold wallet",
   "main": "index.js",
   "repository": {
@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/t4top/mina-offline-util#readme",
   "dependencies": {
-    "mina-signer": "^1.1.0"
+    "mina-signer": "^1.7.0"
   },
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "prettier": "^2.8.2"
   }
 }
