@@ -117,3 +117,7 @@ For signed stake delegation transaction:
 > _Something went wrong please try again. Error was: unknown._
 
 - Wait few minutes for the transaction to be propagated through the network. Confirm this on the Mina Explorer.
+
+## License
+
+[Apache-2.0](./LICENSE)
