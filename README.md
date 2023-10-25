@@ -1,6 +1,6 @@
 # mina-offline-util
 
-A set of simple commands for signing Mina transactions offline. The signed transactions can then be broadcasted from a different computer with internet connection to Mina network. This is useful for managing air-gapped cold wallets.
+This is a simple CLI app for signing Mina Protocol transactions offline. The signed transactions can later be broadcasted from a different computer with internet connection to the Mina network. This app is useful for managing air-gapped cold wallets.
 
 ## Preparation
 
@@ -14,62 +14,25 @@ cd mina-offline-util
 npm install
 ```
 
-- Copy the script file (index.js), its configuration (package.json) and its dependencies (node_modules folder) to your offline computer using a USB stick. index.js, package.json and node_modules must remain in the same folder.
+- Copy the script file (`index.js`), its configuration (`package.json`) and its dependencies (`node_modules` folder) to your offline computer using a USB stick.
+
+> **Note:** `index.js`, `package.json` and `node_modules` must all remain in the same folder.
 
 ## Usage
 
-```bash
-node index.js COMMAND [PARAMETER]...
-```
-
-Below are available COMMANDs and their PARAMETERs. This help is displayed if no COMMAND is specified.
-
-**newwallet**
-
-Create a new wallet. It does not take any PARAMETER.
+- Execute below command on the offline computer to start the app.
 
 ```bash
-node index.js newwallet
+node index.js
 ```
 
-**publickey**
-
-Derive a public key from a private key.
-
-```bash
-node index.js publickey <PRIVATE_KEY>
-```
-
-**payment**
-
-Sign a payment transaction.
-Broadcast the signed transaction using https://minaexplorer.com/broadcast-tx.
-
-```bash
-node index.js payment <PRIVATE_KEY> <RECEIVER> <AMOUNT> <FEE> <NONCE> [MEMO]
-```
-
-**delegation**
-
-Sign a stake delegation transaction.
-Broadcast the signed transaction using https://minaexplorer.com/broadcast-delegation.
-
-```bash
-node index.js delegation <PRIVATE_KEY> <RECEIVER> <FEE> <NONCE> [MEMO]
-```
-
-**_Note:_**
-
-- AMOUNT and FEE are in Mina.
-- MEMO is optional.
-- Put MEMO in quotes ("") if more than one word.
-- Do not share your PRIVATE_KEY with anyone.
-
-## Broadcast signed transactions
+- The app will show an interactive CLI that will guide you through the steps. Follow the prompts and enter appropriate values.
 
 - Copy the output JSON of the script to your online computer using a USB stick.
 
-- The output should look like below.
+## Broadcast signed transactions
+
+- The output JSON should look like below.
 
 For signed payment transaction:
 
@@ -79,6 +42,7 @@ For signed payment transaction:
     "field": "14753603935....",
     "scalar": "20270149766...."
   },
+  "publicKey": "B62qmd....",
   "data": {
     "to": "B62qmd....",
     "from": "B62qmd....",
@@ -99,18 +63,19 @@ For signed stake delegation transaction:
     "field": "20501294904....",
     "scalar": "17717981555...."
   },
+  "publicKey": "B62qmd....",
   "data": {
     "to": "B62qmd....",
     "from": "B62qmd....",
     "fee": "10000000",
-    "nonce": "0",
+    "nonce": "1",
     "memo": "Stake Delegation",
     "validUntil": "4294967295"
   }
 }
 ```
 
-- Go to https://minaexplorer.com/broadcast-tx for payment transfer transaction or https://minaexplorer.com/broadcast-delegation for stake delegation. Paste the JSON output and click the send button.
+- On online computer, go to https://minaexplorer.com/broadcast-tx for payment transfer transaction or https://minaexplorer.com/broadcast-delegation for stake delegation. Paste the JSON output and click the send button.
 
 - You might get a warning error like below. It is a false warning in most cases.
 

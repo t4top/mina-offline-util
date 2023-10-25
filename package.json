@@ -2,6 +2,7 @@
   "name": "@t4top/mina-offline-util",
   "version": "0.2.0",
   "description": "Simple set of commands for handlng Mina transactions offline in an air-gapped cold wallet",
+  "bin": "./index.js",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
     "delegation"
   ],
   "scripts": {
-    "dev": "node .",
+    "start": "node .",
     "format": "prettier --write --ignore-path .gitignore ."
   },
   "author": "t4top",
@@ -28,7 +29,9 @@
   },
   "homepage": "https://github.com/t4top/mina-offline-util#readme",
   "dependencies": {
-    "mina-signer": "^2.1.1"
+    "@clack/prompts": "^0.7.0",
+    "mina-signer": "^2.1.1",
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "prettier": "^3.0.3"
