@@ -2,6 +2,8 @@
 
 This is a simple CLI app for signing Mina Protocol transactions offline. The signed transactions can later be broadcasted from a different computer with internet connection to the Mina network. This app is useful for managing air-gapped cold wallets.
 
+<img src="screenshot.gif" alt="demo screenshot" width="640">
+
 ## Preparation
 
 - Node.js is required to run this script. Install Node.js on both your online and offline computers.
@@ -26,7 +28,7 @@ npm install
 node index.js
 ```
 
-- The app will show an interactive CLI that will guide you through the steps. Follow the prompts and enter appropriate values.
+- The app will show an interactive CLI that will guide you through the steps. Follow the prompts and enter appropriate values. Above gif image is a sample screen capture of the CLI in action.
 
 - Copy the output JSON of the script to your online computer using a USB stick.
 
